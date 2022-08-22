@@ -1,34 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Button, Container, Grid } from "@mui/material";
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import ChairIcon from "@mui/icons-material/AccessibleForwardRounded";
+// import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <div className="App">
+    <Container sx={{ backgroundColor: "red", borderRadius: 5, p: "10px 20px" }}>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <img src="/vite.svg" className="logo" alt="Vite logo" />
+        <img src={reactLogo} className="logo react" alt="React logo" />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+      <button onClick={() => setCount((count) => count + 1)}>
+        count is {count}
+      </button>
+
+      <hr />
+      <Button variant="text">Text</Button>
+      <Button variant="contained" startIcon={<ChairIcon />}>
+        Contained
+      </Button>
+      <Button variant="outlined">Outlined</Button>
+      <Grid spacing={1}>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit.</p>
+      </Grid>
+    </Container>
+  );
 }
 
-export default App
+export default App;
